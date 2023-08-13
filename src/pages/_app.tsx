@@ -1,14 +1,17 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider, createTheme } from '@mui/material';
-import { lightTheme } from '../core/styles/themes';
+import { ThemeProvider } from '@mui/material';
+import { darkTheme } from '../core/styles/themes';
+import UIProvider from '@core/store/context/ui/ui.context';
 
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || (page => page)
 
   return (
-    <ThemeProvider theme={lightTheme}>
-      {getLayout(<Component {...pageProps} />)}
+    <ThemeProvider theme={darkTheme}>
+      <UIProvider>
+        {getLayout(<Component {...pageProps} />)}
+      </UIProvider>
     </ThemeProvider>
   );
 }

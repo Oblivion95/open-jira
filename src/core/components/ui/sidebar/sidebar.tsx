@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { InboxOutlined } from "@mui/icons-material";
+import { useUIContext } from "@core/store/context/ui/ui.context";
 
 type Props = {
   children: ReactNode;
@@ -18,8 +19,10 @@ type Props = {
 const menuItems = ["Inbox", "Starred", "Send email", "Drafts"];
 
 const Sidebar = ({ children }: Props) => {
+  const { sidebarOpen, toggleSidebar } = useUIContext()
+
   return (
-    <Drawer anchor="left" open onClose={() => {}}>
+    <Drawer anchor="left" open={sidebarOpen} onClose={toggleSidebar}>
       <Box style={{ width: '250px' }}>
         <Box sx={{ padding: "5px 10px" }}>
           <Typography variant="h4" component="div">
