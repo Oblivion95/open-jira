@@ -1,0 +1,24 @@
+{
+  "[rocket-mvbasic]": {
+    "editor.codeLens": false
+  },
+  "files.associations": {
+    "*.ejs": "html",
+    "**/.rmv/config/*.json": "jsonc"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.ruby-lsp": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/.rmv/catalog/**": true,
+    "*/_*": false
+  }
+}
