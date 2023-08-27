@@ -10,6 +10,9 @@ const darkTheme = createTheme({
     error: {
       main: red.A400,
     },
+    background: {
+      default: "#121212",
+    },
   },
 
   components: {

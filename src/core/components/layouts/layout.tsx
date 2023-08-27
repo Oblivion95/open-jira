@@ -16,7 +16,7 @@ const Layout = ({ title = "", children }: Props) => (
     </Head>
     <Navbar />
     <Sidebar />
-    <Box sx={{ padding: "10px 20px" }}>{children}iS</Box>
+    <Box sx={{ padding: "10px 20px" }}>{children}</Box>
   </Box>
 );
 

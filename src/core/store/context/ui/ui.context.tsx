@@ -2,27 +2,19 @@ import { createContext, useReducer, useContext } from "react";
 
 type UIContextProps = {
   sidebarOpen: boolean;
-  dispatch: (action: any) => void;
+  toggleSidebar: (action: any) => void;
 };
 
 const UIContext = createContext<UIContextProps>({} as UIContextProps);
 
 const INITIAL_STATE: UIContextProps = {
   sidebarOpen: false,
-  dispatch: () => {},
+  toggleSidebar: () => {},
 };
 
 const uiReducer = (state: UIContextProps, action: any) => {
   const { type, payload } = action;
   const reducerObject: any = {
-    OPEN_SIDEBAR: {
-      ...state,
-      sidebarOpen: true,
-    },
-    CLOSE_SIDEBAR: {
-      ...state,
-      sidebarOpen: false,
-    },
     TOGGLE_SIDEBAR: {
       ...state,
       sidebarOpen: !state.sidebarOpen,
@@ -35,7 +27,7 @@ const uiReducer = (state: UIContextProps, action: any) => {
 
 export const useUIContext = () => useContext(UIContext);
 
-const UIProvider = ({ children }: { children: React.ReactNode }) => {
+const   UIProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(uiReducer, INITIAL_STATE);
 
   const toggleSidebar = () => {
