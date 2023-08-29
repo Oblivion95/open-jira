@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Card, CardContent, CardHeader, Grid } from "@mui/material";
 import Layout from "@core/components/layouts/layout";
 import { EntryList } from "@core/components/ui/entry-list";
+import NewEntry from "./new-entry/new-entry";
 
 interface Props {
   children: ReactNode;
@@ -13,6 +14,7 @@ const Home = () => {
       <Grid item xs={12} sm={4}>
         <Card sx={{ height: "calc(100vh - 100px)" }}>
           <CardHeader title="Pendientes" />
+          <NewEntry />
           <CardContent>
             <EntryList />
           </CardContent>
@@ -22,7 +24,7 @@ const Home = () => {
         <Card sx={{ height: "calc(100vh - 100px)" }}>
           <CardHeader title="En progreso" />
           <CardContent>
-            <EntryList />
+            <EntryList status="pending" />
           </CardContent>
         </Card>
       </Grid>
@@ -30,7 +32,7 @@ const Home = () => {
         <Card sx={{ height: "calc(100vh - 100px)" }}>
           <CardHeader title="Completadas" />
           <CardContent>
-            <EntryList />
+            <EntryList  />
           </CardContent>
         </Card>
       </Grid>

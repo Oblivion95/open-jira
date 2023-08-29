@@ -1,10 +1,11 @@
 import { Card, CardActionArea, CardActions, CardContent, Typography } from "@mui/material";
+import { Entry } from "@core/types";
 
 interface Props {
-  children: ReactNode;
+  entry: Entry;
 }
 
-const EntryCard = ({ children }: Props) => {
+const EntryCard = ({ entry }: Props) => {
   return (
     <Card
       sx={{
@@ -13,9 +14,9 @@ const EntryCard = ({ children }: Props) => {
     >
       <CardActionArea>
         <CardContent>
-          <Typography sx={{ whiteSpace: 'pre-line' }}>Esto es una descripción</Typography>
+          <Typography sx={{ whiteSpace: 'pre-line' }}>{entry.description}</Typography>
           <CardActions /* sx={{ display: 'flex', justifyContent: 'end' }} */>
-            <Typography sx={{ marginLeft: 'auto' }}>Hace 30 minutos atras</Typography>
+            <Typography sx={{ marginLeft: 'auto' }}>{entry.createdAt}</Typography>
           </CardActions>
         </CardContent>
       </CardActionArea>
