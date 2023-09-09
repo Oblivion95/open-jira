@@ -1,4 +1,4 @@
-import { Paper, List } from "@mui/material";
+import { Paper, List, Box } from "@mui/material";
 import { EntryCard } from "../entry-card";
 import { useEntries } from "@core/store/context/entries/entries";
 import { useMemo } from "react";
@@ -13,10 +13,10 @@ const EntryList = ({ status }: Props) => {
   const entriesByStatus = useMemo(() => entries.filter((entry) => entry.status === status), [entries, status]);
 
   return (
-    <div>
+    <Box>
       <Paper
         sx={{
-          height: "calc(100vh - 250px)",
+          minHeight: "fit-content",
           overflowY: "auto",
           backgroundColor: 'transparent',
           padding: 1
@@ -28,7 +28,7 @@ const EntryList = ({ status }: Props) => {
           ))}
         </List>
       </Paper>
-    </div>
+    </Box>
   );
 };
 

@@ -12,11 +12,11 @@ const Home = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={4}>
-        <Card sx={{ height: "calc(100vh - 100px)" }}>
+        <Card sx={{ height: "calc(100vh - 100px)", overflowY: "auto" }}>
           <CardHeader title="Pendientes" />
           <NewEntry />
           <CardContent>
-            <EntryList />
+            <EntryList status="pending" />
           </CardContent>
         </Card>
       </Grid>
@@ -24,7 +24,7 @@ const Home = () => {
         <Card sx={{ height: "calc(100vh - 100px)" }}>
           <CardHeader title="En progreso" />
           <CardContent>
-            <EntryList status="pending" />
+            <EntryList  />
           </CardContent>
         </Card>
       </Grid>

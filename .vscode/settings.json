@@ -4,7 +4,8 @@
   },
   "files.associations": {
     "*.ejs": "html",
-    "**/.rmv/config/*.json": "jsonc"
+    "**/.rmv/config/*.json": "jsonc",
+    "plyconfig.json": "jsonc"
   },
   "files.exclude": {
     "**/.git": true,
